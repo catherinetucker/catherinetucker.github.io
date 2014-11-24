@@ -142,7 +142,8 @@
 
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiZ2NhIiwiYSI6IjhVdURsWk0ifQ.BV81Ca8XjHz-EB_iXoWcRA';
-var map = L.mapbox.map('map', 'gca.kad81014')
+var zips = L.mapbox.map('map', 'gca.kad81014');
+var blockgroups = L.mapbox.map('map2','gca.k9hkpbkp');
   .setView([32.875, -96.965], 10);
 
 var myLayer = L.mapbox.featureLayer().addTo(map);

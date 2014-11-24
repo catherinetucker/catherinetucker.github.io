@@ -131,7 +131,37 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoiZ2NhIiwiYSI6IjhVdURsWk0ifQ.BV81Ca8XjHz-EB_iXoWcRA';
 var map = L.mapbox.map('map', 'gca.kad81014')
   .setView([32.875, -96.965], 10);
-
+-		
+-var geojson = {		
+-    type: 'FeatureCollection',		
+-    features: [{		
+-        type: 'Feature',		
+-        properties: {		
+-            title: 'Washington, D.C.',		
+-            'marker-color': '#f86767',		
+-            'marker-size': 'large',		
+-            'marker-symbol': 'star',		
+-            url: 'http://en.wikipedia.org/wiki/Washington,_D.C.'		
+-        },		
+-        geometry: {		
+-            type: 'Point',		
+-            coordinates: [-77.03201, 38.90065]		
+-        }		
+-    },		
+-    {		
+-        type: 'Feature',		
+-        properties: {		
+-            title: 'Baltimore, MD',		
+-            'marker-color': '#7ec9b1',		
+-            'marker-size': 'large',		
+-            'marker-symbol': 'star',		
+-            url: 'http://en.wikipedia.org/wiki/Baltimore'		
+-        },		
+-        geometry: {		
+-            type: 'Point',		
+-            coordinates: [-76.60767, 39.28755]		
+-        }		
+-    }]
 var myLayer = L.mapbox.featureLayer().addTo(map);
 };
 

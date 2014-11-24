@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Test</title>
+<title>Show tooltips on hover</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
@@ -15,8 +16,8 @@
 
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiZ2NhIiwiYSI6IjhVdURsWk0ifQ.BV81Ca8XjHz-EB_iXoWcRA';
-var map = L.mapbox.map('map', 'gca.k9i8himd')
-  .setView([32.797, -96.844], 10);
+var map = L.mapbox.map('map', 'examples.map-20v6611k')
+  .setView([39.12367, -76.81229], 9);
 
 var myLayer = L.mapbox.featureLayer().addTo(map);
 
@@ -33,7 +34,21 @@ var geojson = {
         },
         geometry: {
             type: 'Point',
-            coordinates: [32.797, -96.844]
+            coordinates: [-77.03201, 38.90065]
+        }
+    },
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Baltimore, MD',
+            'marker-color': '#7ec9b1',
+            'marker-size': 'large',
+            'marker-symbol': 'star',
+            url: 'http://en.wikipedia.org/wiki/Baltimore'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-76.60767, 39.28755]
         }
     }]
 };
@@ -42,7 +57,8 @@ myLayer.setGeoJSON(geojson);
 myLayer.on('mouseover', function(e) {
     e.layer.openPopup();
 });
-;
+myLayer.on('mouseout', function(e) {
+    e.layer.closePopup();
 });
 </script>
 </body>

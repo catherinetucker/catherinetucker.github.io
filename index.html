@@ -155,31 +155,6 @@ $('#counts').click(function() {
     map.removeLayer(L.mapbox.tileLayer('gca.kxi27qfr,gca.u2x4j9k9'));
     map.addLayer(L.mapbox.tileLayer('gca.cscnb3xr,gca.ft5ljtt9'));
   });
-var myLayer = L.mapbox.featureLayer().addTo(map);
-var geojson = {
-    type: 'FeatureCollection',
-    features: [{
-        type: 'Feature',
-        properties: {
-            title: 'Created by Catherine Tucker at Enroll America',
-            'marker-color': '#f86767',
-            'marker-size': 'large',
-            'marker-symbol': 'star',
-            url: 'http://www.getcoveredamerica.org'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [-77.026554, 38.898478]
-        }
-    }]
-};
-myLayer.setGeoJSON(geojson);
-myLayer.on('mouseover', function(e) {
-    e.layer.openPopup();
-});
-myLayer.on('mouseout', function(e) {
-    e.layer.closePopup();
-});
 </script>
 </body>
 </html>

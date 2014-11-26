@@ -142,8 +142,38 @@
 
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiZ2NhIiwiYSI6IjhVdURsWk0ifQ.BV81Ca8XjHz-EB_iXoWcRA';
-var map = L.mapbox.map('map', 'gca.kam608a2,gca.kxi27qfr,gca.u2x4j9k9')
-  .setView([32.875, -96.965], 10);
+var map = L.mapbox.map('map', 'gca.kam608a2');
+var counts = 'gca.cscnb3xr,gca.ft5ljtt9';
+var rates = 'gca.kxi27qfr,gca.u2x4j9k9';
+var options = {
+  legendControl: false,
+  minZoom: 8,
+  zoom: 8,
+  center: [32.9, -96.8, 8]
+};
+var map = L.mapbox.map('map','gca.kam608a2',change,options);
+map.gridControl.options.follow = true
+.setView([32.875, -96.965], 10);
+
+$('#2014').click(function() {
+    $('#2013').removeClass('active');
+    $('#change').removeClass('active');
+    $('#2014').addClass('active');
+    $('.legend').hide();
+    $('#legend_2014').show();
+    map.removeLayer(L.mapbox.tileLayer(counts));
+    map.addLayer(L.mapbox.tileLayer(rates));
+  });
+$('#2013').click(function() {
+    $('#2014').removeClass('active');
+    $('#change').removeClass('active');
+    $('#2013').addClass('active');
+    $('.legend').hide();
+    $('#legend_2013').show();
+    map.removeLayer(L.mapbox.tileLayer(rates));
+    map.addLayer(L.mapbox.tileLayer(counts));
+  });
+
 
 var myLayer = L.mapbox.featureLayer().addTo(map);
 

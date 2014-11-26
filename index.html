@@ -142,16 +142,16 @@ $('#rates').click(function() {
     $('#rates').addClass('active');
     $('.legend').hide();
     $('#legend_2014').show();
-    map.removeLayer(L.mapbox.tileLayer(counts));
-    map.addLayer(L.mapbox.tileLayer(rates));
+    map.removeLayer(L.mapbox.tileLayer('gca.cscnb3xr,gca.ft5ljtt9'));
+    map.addLayer(L.mapbox.tileLayer('gca.cscnb3xr,gca.ft5ljtt9'));
   });
 $('#counts').click(function() {
     $('#rates').removeClass('active');
     $('#counts').addClass('active');
     $('.legend').hide();
     $('#legend_2013').show();
-    map.removeLayer(L.mapbox.tileLayer(rates));
-    map.addLayer(L.mapbox.tileLayer(counts));
+    map.removeLayer(L.mapbox.tileLayer('gca.cscnb3xr,gca.ft5ljtt9'));
+    map.addLayer(L.mapbox.tileLayer('gca.cscnb3xr,gca.ft5ljtt9'));
   });
 var myLayer = L.mapbox.featureLayer().addTo(map);
 var geojson = {

@@ -142,7 +142,6 @@
 
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiZ2NhIiwiYSI6IjhVdURsWk0ifQ.BV81Ca8XjHz-EB_iXoWcRA';
-var map = L.mapbox.map('map', 'gca.kam608a2');
 var counts = 'gca.cscnb3xr,gca.ft5ljtt9';
 var rates = 'gca.kxi27qfr,gca.u2x4j9k9';
 var options = {
@@ -152,8 +151,7 @@ var options = {
   center: [32.9, -96.8, 8]
 };
 var map = L.mapbox.map('map','gca.kam608a2',change,options);
-map.gridControl.options.follow = true
-.setView([32.875, -96.965], 10);
+map.gridControl.options.follow = true;
 
 $('#2014').click(function() {
     $('#2013').removeClass('active');

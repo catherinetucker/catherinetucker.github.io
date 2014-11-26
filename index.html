@@ -152,8 +152,8 @@ $('#counts').click(function() {
     $('#counts').addClass('active');
     $('.legend').hide();
     $('#legend_2013').show();
-    map.removeLayer(L.mapbox.tileLayer('gca.kxi27qfr,gca.u2x4j9k9'));
-    map.addLayer(L.mapbox.tileLayer('gca.cscnb3xr,gca.ft5ljtt9'));
+    map.removeLayer(L.mapbox.tileLayer(rates));
+    map.addLayer(L.mapbox.tileLayer(counts));
   });
 </script>
 </body>

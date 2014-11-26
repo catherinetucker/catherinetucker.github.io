@@ -139,6 +139,7 @@ var options = {
 };
 var map = L.mapbox.map('map',counts,options);
 map.gridControl.options.follow = true;
+map.addLayer(L.mapbox.tileLayer('gca.kam608a2'))
 
 $('#rates').click(function() {
     $('#counts').removeClass('active');
@@ -155,6 +156,7 @@ $('#counts').click(function() {
     $('#legend_2013').show();
     map.removeLayer(L.mapbox.tileLayer(rates));
     map.addLayer(L.mapbox.tileLayer(counts));
+    
   });
 
 

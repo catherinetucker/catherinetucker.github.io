@@ -139,8 +139,8 @@
 </head>
 <body>
 <nav id="menu-ui" class="menu-ui">
-<a href="#" id="2013" class="">Uninsured Rates</a>
-<a href="#" id="2014" class="">Uninsured Counts</a>
+<a href="#" id="rates" class="">Uninsured Rates</a>
+<a href="#" id="counts" class="">Uninsured Counts</a>
 </nav>
 <div id='map'></div>
 
@@ -156,21 +156,21 @@ var options = {
 };
 
 
-$('#2014').click(function() {
-    $('#2013').removeClass('active');
-    $('#2014').addClass('active');
+$('#rates').click(function() {
+    $('#counts').removeClass('active');
+    $('#rates').addClass('active');
     $('.legend').hide();
     $('#legend_2014').show();
-    map.removeLayer(L.mapbox.tileLayer('counts'));
-    map.addLayer(L.mapbox.tileLayer('rates'));
+    map.removeLayer(L.mapbox.tileLayer(counts));
+    map.addLayer(L.mapbox.tileLayer(rates));
   });
-$('#2013').click(function() {
-    $('#2014').removeClass('active');
-    $('#2013').addClass('active');
+$('#counts').click(function() {
+    $('#rates').removeClass('active');
+    $('#counts').addClass('active');
     $('.legend').hide();
     $('#legend_2013').show();
-    map.removeLayer(L.mapbox.tileLayer('rates'));
-    map.addLayer(L.mapbox.tileLayer('counts'));
+    map.removeLayer(L.mapbox.tileLayer(rates));
+    map.addLayer(L.mapbox.tileLayer(counts));
   });
 
 

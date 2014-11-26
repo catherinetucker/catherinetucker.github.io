@@ -138,6 +138,10 @@
 </style>
 </head>
 <body>
+<nav id="menu-ui" class="menu-ui">
+<a href="#" id="2013" class="">Uninsured Rates</a>
+<a href="#" id="2014" class="">Uninsured Counts</a>
+</nav>
 <div id='map'></div>
 
 <script>
@@ -150,12 +154,10 @@ var options = {
   zoom: 8,
   center: [32.9, -96.8, 8]
 };
-var map = L.mapbox.map('map','gca.kam608a2',change,options);
-map.gridControl.options.follow = true;
+
 
 $('#2014').click(function() {
     $('#2013').removeClass('active');
-    $('#change').removeClass('active');
     $('#2014').addClass('active');
     $('.legend').hide();
     $('#legend_2014').show();
@@ -164,7 +166,6 @@ $('#2014').click(function() {
   });
 $('#2013').click(function() {
     $('#2014').removeClass('active');
-    $('#change').removeClass('active');
     $('#2013').addClass('active');
     $('.legend').hide();
     $('#legend_2013').show();

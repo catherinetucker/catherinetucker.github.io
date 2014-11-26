@@ -161,16 +161,16 @@ $('#2014').click(function() {
     $('#2014').addClass('active');
     $('.legend').hide();
     $('#legend_2014').show();
-    map.removeLayer(L.mapbox.tileLayer(counts));
-    map.addLayer(L.mapbox.tileLayer(rates));
+    map.removeLayer(L.mapbox.tileLayer('counts'));
+    map.addLayer(L.mapbox.tileLayer('rates'));
   });
 $('#2013').click(function() {
     $('#2014').removeClass('active');
     $('#2013').addClass('active');
     $('.legend').hide();
     $('#legend_2013').show();
-    map.removeLayer(L.mapbox.tileLayer(rates));
-    map.addLayer(L.mapbox.tileLayer(counts));
+    map.removeLayer(L.mapbox.tileLayer('rates'));
+    map.addLayer(L.mapbox.tileLayer('counts'));
   });
 
 

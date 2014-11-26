@@ -11,13 +11,12 @@
 </head>
 <body>
 <nav id="menu-ui" class="menu-ui">
-<a href="#" id="rates" class=>Uninsured Rates</a>
+<a href="#" id="rates" class="">Uninsured Rates</a>
 <a href="#" id="counts" class="active">Uninsured Counts</a>
 </nav>
 <div id='map'></div>
 
 <style>
-
   body { margin:0; padding:0; }
   #map { position:absolute; top:0; bottom:0; width:100%; }
   .menu-ui {
@@ -128,18 +127,16 @@
 </style>
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiZ2NhIiwiYSI6IjhVdURsWk0ifQ.BV81Ca8XjHz-EB_iXoWcRA';
-var counts = 'gca.cscnb3xr,gca.ft5ljtt9,gca.kam608a2';
-var rates = 'gca.kxi27qfr,gca.u2x4j9k9,gca.kam608a2';
+var counts = 'gca.cscnb3xr,gca.ft5ljtt9';
+var rates = 'gca.kxi27qfr,gca.u2x4j9k9';
 var options = {
   legendControl: false,
   minZoom: 8,
   zoom: 8,
   center: [32.9, -96.8, 8]
 };
-var map = L.mapbox.map(counts,options);
+var map = L.mapbox.map('map',counts,options);
 map.gridControl.options.follow = true;
-
-
 $('#rates').click(function() {
     $('#counts').removeClass('active');
     $('#rates').addClass('active');
@@ -155,12 +152,8 @@ $('#counts').click(function() {
     $('#legend_2013').show();
     map.removeLayer(L.mapbox.tileLayer(rates));
     map.addLayer(L.mapbox.tileLayer(counts));
-    
   });
-
-
 var myLayer = L.mapbox.featureLayer().addTo(map);
-
 var geojson = {
     type: 'FeatureCollection',
     features: [{
@@ -178,7 +171,6 @@ var geojson = {
         }
     }]
 };
-
 myLayer.setGeoJSON(geojson);
 myLayer.on('mouseover', function(e) {
     e.layer.openPopup();
